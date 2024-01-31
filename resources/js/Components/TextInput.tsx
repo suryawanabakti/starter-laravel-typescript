@@ -31,7 +31,7 @@ export default forwardRef(function TextInput(
         <input
             {...props}
             type={type}
-            className={"form-control" + className}
+            className={"form-control " + className}
             ref={localRef}
         />
     );

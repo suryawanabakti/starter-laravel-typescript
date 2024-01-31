@@ -15,14 +15,14 @@ export default function PasswordToggle({
     return (
         <a
             onClick={handleClick}
-            href="#"
+            href="#toggle-password"
             className="link-secondary"
             title="Show password"
         >
             {!toggle ? (
-                <IconEye size={20} stroke={1} />
-            ) : (
                 <IconEyeOff size={20} stroke={1} />
+            ) : (
+                <IconEye size={20} stroke={1} />
             )}
         </a>
     );

@@ -9,7 +9,11 @@ export default function PrimaryButton({
     return (
         <button
             {...props}
-            className={`btn btn-danger w-100 ` + className}
+            className={
+                `btn btn-danger w-100 ` +
+                className +
+                ` ${disabled && " btn-loading"}`
+            }
             disabled={disabled}
         >
             {children}

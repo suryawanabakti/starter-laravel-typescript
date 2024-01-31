@@ -6,6 +6,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 import PasswordToggle from "@/Components/PasswordToggle";
+import ApplicationLogo from "@/Components/ApplicationLogo";
 
 export default function Login({
     status,
@@ -19,7 +20,9 @@ export default function Login({
         password: "",
         remember: false,
     });
+
     const [showPassword, setShowPassword] = useState(false);
+
     useEffect(() => {
         return () => {
             reset("password");
@@ -49,11 +52,7 @@ export default function Login({
                                     href="/"
                                     className="navbar-brand navbar-brand-autodark"
                                 >
-                                    <img
-                                        src="/static/logo.png"
-                                        width={70}
-                                        alt="UNHAS"
-                                    />
+                                    <ApplicationLogo width="70" />
                                 </Link>
                             </div>
                             <h2 className="h3 text-center mb-3">

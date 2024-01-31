@@ -10,7 +10,7 @@ export default function SecondNavbar() {
 
     const handleSearch: FormEventHandler = (e) => {
         e.preventDefault();
-        get("/dashboard");
+        get("/admin/dashboard");
     };
     return (
         <header className="navbar-expand-md">
@@ -25,7 +25,7 @@ export default function SecondNavbar() {
                             >
                                 <Link
                                     className="nav-link"
-                                    href="/dashboard/admin"
+                                    href="/admin/dashboard"
                                 >
                                     <span className="nav-link-icon d-md-none d-lg-inline-block">
                                         <IconHome

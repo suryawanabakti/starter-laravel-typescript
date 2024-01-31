@@ -76,7 +76,7 @@ export default function UpdatePasswordForm({
                             setData("current_password", e.target.value)
                         }
                         type="password"
-                        className="mt-1 block w-full"
+                        className="mt-1 "
                         autoComplete="current-password"
                     />
 

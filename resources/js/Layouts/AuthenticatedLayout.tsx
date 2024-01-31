@@ -5,12 +5,14 @@ import SecondNavbar from "@/Partials/Auth/SecondNavbar";
 import Footer from "@/Partials/Auth/Footer";
 import LinkHead from "@/Partials/Auth/LinkHead";
 import ScriptBody from "@/Partials/Auth/ScriptBody";
+import { Link } from "@inertiajs/react";
 
 export default function Authenticated({
     user,
     header,
     children,
-}: PropsWithChildren<{ user: User; header?: ReactNode }>) {
+    link,
+}: PropsWithChildren<{ user: User; header?: ReactNode; link?: string }>) {
     return (
         <>
             <LinkHead />
@@ -27,6 +29,11 @@ export default function Authenticated({
                                     <div className="col">
                                         <h2 className="page-title">{header}</h2>
                                     </div>
+                                    {link && (
+                                        <div className="col-auto">
+                                            <Link href={link}>Kembali</Link>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
