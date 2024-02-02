@@ -22,4 +22,14 @@ class NotificationController extends Controller
             "notification" => $notification
         ]);
     }
+
+    public function markAllAsRead()
+    {
+        auth()->user()->unreadNotifications->markAsRead();
+        return back()->with('message', [
+            'message' => '📝 Berhasil Update Mahasiswa',
+            'data' => null,
+            'status' => 'success'
+        ]);;
+    }
 }

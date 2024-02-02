@@ -37,6 +37,7 @@ Route::get('/send-notification', function () {
 
 Route::get('/notifications', [NotificationController::class, 'index']);
 Route::get('/notifications/{notification}', [NotificationController::class, 'show']);
+Route::post('/notifications/mark-all-as-read', [NotificationController::class, 'markAllAsRead']);
 
 
 Route::get('/admin/dashboard', function () {

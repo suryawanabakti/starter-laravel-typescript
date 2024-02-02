@@ -71,48 +71,73 @@ export default function FirstNavbar({
                                     <div className="card-header">
                                         <h3 className="card-title d-flex justify-content-between w-100">
                                             Notifications
-                                            <a
-                                                href="#markAllAsRead"
+                                            <Link
+                                                href="/notifications/mark-all-as-read"
+                                                method="post"
+                                                as="button"
                                                 className="text-primary"
                                             >
                                                 <small>Mark All As Read</small>
-                                            </a>
+                                            </Link>
                                         </h3>
                                     </div>
                                     <div className="list-group list-group-flush list-group-hoverable">
-                                        {user.notifications.map((data: any) => {
-                                            return (
-                                                <Link
-                                                    href={`/notifications/${data.id}`}
-                                                    className="text-decoration-none"
-                                                >
-                                                    <div className="list-group-item">
-                                                        <div className="row align-items-center">
-                                                            <div className="col-auto">
-                                                                {!data.read_at ? (
-                                                                    <span className="status-dot status-dot-animated bg-red d-block" />
-                                                                ) : (
-                                                                    <span className="status-dot d-block" />
-                                                                )}
-                                                            </div>
-                                                            <div className="col text-truncate">
-                                                                {/* <a
+                                        {user.limitnotification.map(
+                                            (data: any) => {
+                                                return (
+                                                    <Link
+                                                        href={`/notifications/${data.id}`}
+                                                        className="text-decoration-none"
+                                                    >
+                                                        <div className="list-group-item">
+                                                            <div className="row align-items-center">
+                                                                <div className="col-auto">
+                                                                    {!data.read_at ? (
+                                                                        <span className="status-dot status-dot-animated bg-red d-block" />
+                                                                    ) : (
+                                                                        <span className="status-dot d-block" />
+                                                                    )}
+                                                                </div>
+                                                                <div className="col text-truncate">
+                                                                    {/* <a
                                                                     href="#text"
                                                                     className="text-body d-block"
                                                                 ></a> */}
-                                                                <div className="d-block text-muted text-truncate mt-n1">
-                                                                    {
-                                                                        data
-                                                                            .data
-                                                                            .data
-                                                                    }
+                                                                    <div className="d-block text-muted text-truncate mt-n1">
+                                                                        {
+                                                                            data
+                                                                                .data
+                                                                                .data
+                                                                        }
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </Link>
+                                                );
+                                            }
+                                        )}
+                                        {user.limitnotification.length ===
+                                            5 && (
+                                            <Link
+                                                href={`/notifications`}
+                                                className="text-decoration-none"
+                                            >
+                                                <div className="list-group-item text-center">
+                                                    <div className="row align-items-center">
+                                                        <div className="col text-truncate">
+                                                            {/* <a
+                                                                    href="#text"
+                                                                    className="text-body d-block"
+                                                                ></a> */}
+                                                            <div className="d-block text-muted text-truncate mt-n1">
+                                                                Show All
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </Link>
-                                            );
-                                        })}
+                                                </div>
+                                            </Link>
+                                        )}
                                     </div>
                                 </div>
                             </div>
