@@ -22,16 +22,13 @@ export default function Authenticated({
     const { flash }: any = usePage().props;
     useEffect(() => {
         if (flash?.message) {
-            toast.success("Mark All As Read ✅");
+            toast.success(flash.message.message);
         } else {
             toast.dismiss();
         }
     }, [flash]);
     return (
         <>
-            <div className="bot">
-                Hi, Saya adalah Robot Unhas 👋. Apakah anda ingin tutorial ?
-            </div>
             <LinkHead />
             <div className="page">
                 <Toaster />

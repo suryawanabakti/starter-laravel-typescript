@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $with = ['roles', 'limitnotification'];
+    protected $with = ['roles', 'limitnotification', 'unreadNotifications'];
     protected $fillable = [
         'name',
         'email',

@@ -27,7 +27,7 @@ class NotificationController extends Controller
     {
         auth()->user()->unreadNotifications->markAsRead();
         return back()->with('message', [
-            'message' => '📝 Berhasil Update Mahasiswa',
+            'message' => 'Mark all as read',
             'data' => null,
             'status' => 'success'
         ]);;
